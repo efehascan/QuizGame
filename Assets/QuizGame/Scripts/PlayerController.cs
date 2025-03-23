@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region Singleton
-    
     public static PlayerController Singleton { get; private set; }
 
     private void Awake()
