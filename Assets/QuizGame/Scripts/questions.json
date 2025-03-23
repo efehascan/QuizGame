@@ -1,0 +1,244 @@
+{
+  "questions": [
+    {
+      "questionText": "Türkiye'nin başkenti neresidir?",
+      "answer": "Ankara",
+      "options": ["İstanbul", "Ankara", "İzmir", "Bursa"]
+    },
+    {
+      "questionText": "İstanbul ne zaman fethedildi?",
+      "answer": "1453",
+      "options": ["1453", "1071", "1923", "1402"]
+    },
+    {
+      "questionText": "En büyük gezegen hangisidir?",
+      "answer": "Jüpiter",
+      "options": ["Mars", "Dünya", "Satürn", "Jüpiter"]
+    },
+    {
+      "questionText": "Türkiye kaç bölgeden oluşur?",
+      "answer": "7",
+      "options": ["6", "7", "8", "9"]
+    },
+    {
+      "questionText": "Atatürk’ün doğum yılı nedir?",
+      "answer": "1881",
+      "options": ["1881", "1900", "1875", "1890"]
+    },
+    {
+      "questionText": "Dünyanın en uzun nehri hangisidir?",
+      "answer": "Nil",
+      "options": ["Amazon", "Nil", "Mississippi", "Yangtze"]
+    },
+    {
+      "questionText": "Ay’da ilk yürüyen insan kimdir?",
+      "answer": "Neil Armstrong",
+      "options": ["Yuri Gagarin", "Buzz Aldrin", "Neil Armstrong", "John Glenn"]
+    },
+    {
+      "questionText": "Türk bayrağındaki yıldız kaç köşelidir?",
+      "answer": "5",
+      "options": ["4", "5", "6", "8"]
+    },
+    {
+      "questionText": "DNA'nın yapısı nasıldır?",
+      "answer": "Çift sarmal",
+      "options": ["Düz çizgi", "Çift sarmal", "Üçlü yapı", "Küresel"]
+    },
+    {
+      "questionText": "İlk yazılı kanunlar hangi uygarlığa aittir?",
+      "answer": "Sümerler",
+      "options": ["Hititler", "Sümerler", "Mısırlılar", "Urartular"]
+    },
+    {
+      "questionText": "En küçük asal sayı nedir?",
+      "answer": "2",
+      "options": ["1", "2", "3", "0"]
+    },
+    {
+      "questionText": "Türkiye’nin en yüksek dağı hangisidir?",
+      "answer": "Ağrı Dağı",
+      "options": ["Erciyes", "Ağrı Dağı", "Kaçkar", "Palandöken"]
+    },
+    {
+      "questionText": "Osmanlı Devleti’nin ilk padişahı kimdir?",
+      "answer": "Osman Gazi",
+      "options": ["Orhan Gazi", "Osman Gazi", "Yavuz Sultan Selim", "Kanuni"]
+    },
+    {
+      "questionText": "Einstein’ın ünlü denklemi nedir?",
+      "answer": "E=mc²",
+      "options": ["F=ma", "E=mc²", "a² + b² = c²", "PV=nRT"]
+    },
+    {
+      "questionText": "En çok konuşulan dil hangisidir?",
+      "answer": "Çince",
+      "options": ["İngilizce", "İspanyolca", "Hintçe", "Çince"]
+    },
+    {
+      "questionText": "Türkiye’nin en uzun nehri hangisidir?",
+      "answer": "Kızılırmak",
+      "options": ["Fırat", "Kızılırmak", "Dicle", "Sakarya"]
+    },
+    {
+      "questionText": "Dünya Sağlık Örgütü’nün kısaltması nedir?",
+      "answer": "WHO",
+      "options": ["UN", "NATO", "WHO", "UNICEF"]
+    },
+    {
+      "questionText": "2020 Tokyo Olimpiyatları hangi yıl yapıldı?",
+      "answer": "2021",
+      "options": ["2020", "2021", "2022", "2019"]
+    },
+    {
+      "questionText": "Tarihteki ilk Türk devleti hangisidir?",
+      "answer": "Asya Hun Devleti",
+      "options": ["Göktürkler", "Selçuklular", "Asya Hun Devleti", "Uygurlar"]
+    },
+    {
+      "questionText": "İnsan vücudunda kaç kemik vardır?",
+      "answer": "206",
+      "options": ["205", "206", "201", "210"]
+    },
+    {
+      "questionText": "Fransa'nın başkenti neresidir?",
+      "answer": "Paris",
+      "options": ["Paris", "Lyon", "Nice", "Marsilya"]
+    },
+    {
+      "questionText": "Su kaç derecede donar?",
+      "answer": "0",
+      "options": ["-1", "0", "1", "100"]
+    },
+    {
+      "questionText": "En büyük okyanus hangisidir?",
+      "answer": "Pasifik",
+      "options": ["Atlantik", "Hint", "Pasifik", "Arktik"]
+    },
+    {
+      "questionText": "Türkiye'nin telefon kodu nedir?",
+      "answer": "+90",
+      "options": ["+91", "+90", "+80", "+98"]
+    },
+    {
+      "questionText": "İlk çağ filozoflarından biri kimdir?",
+      "answer": "Sokrates",
+      "options": ["Newton", "Einstein", "Sokrates", "Galileo"]
+    },
+    {
+      "questionText": "Kuran kaç sureden oluşur?",
+      "answer": "114",
+      "options": ["112", "113", "114", "115"]
+    },
+    {
+      "questionText": "Türkiye’nin en kalabalık ili hangisidir?",
+      "answer": "İstanbul",
+      "options": ["Ankara", "İzmir", "İstanbul", "Bursa"]
+    },
+    {
+      "questionText": "Türkiye'nin ilk kadın pilotu kimdir?",
+      "answer": "Sabiha Gökçen",
+      "options": ["Sabiha Gökçen", "Afet İnan", "Halide Edip", "Fikriye Hanım"]
+    },
+    {
+      "questionText": "En çok kullanılan programlama dili hangisidir?",
+      "answer": "Python",
+      "options": ["C#", "Java", "Python", "Ruby"]
+    },
+    {
+      "questionText": "Ay yıldızlı bayrağımızda hangi renkler vardır?",
+      "answer": "Kırmızı ve beyaz",
+      "options": ["Kırmızı ve beyaz", "Mavi ve beyaz", "Kırmızı ve siyah", "Yeşil ve beyaz"]
+    },
+    {
+      "questionText": "Kıta olarak en büyük ülke hangisidir?",
+      "answer": "Rusya",
+      "options": ["Çin", "ABD", "Rusya", "Kanada"]
+    },
+    {
+      "questionText": "Türkiye’nin en büyük gölü hangisidir?",
+      "answer": "Van Gölü",
+      "options": ["Tuz Gölü", "Van Gölü", "Beyşehir Gölü", "Eğirdir Gölü"]
+    },
+    {
+      "questionText": "Dünyanın uydusu nedir?",
+      "answer": "Ay",
+      "options": ["Mars", "Ay", "Venüs", "Jüpiter"]
+    },
+    {
+      "questionText": "Yılın kaç ayı 31 gündür?",
+      "answer": "7",
+      "options": ["6", "7", "8", "9"]
+    },
+    {
+      "questionText": "İnsan kalbinde kaç odacık vardır?",
+      "answer": "4",
+      "options": ["2", "3", "4", "5"]
+    },
+    {
+      "questionText": "En hızlı kara hayvanı nedir?",
+      "answer": "Çita",
+      "options": ["Aslan", "Kaplan", "Çita", "Kurt"]
+    },
+    {
+      "questionText": "İlk Türk alfabesi nedir?",
+      "answer": "Göktürk Alfabesi",
+      "options": ["Osmanlıca", "Latin", "Göktürk Alfabesi", "Arapça"]
+    },
+    {
+      "questionText": "Google hangi yıl kuruldu?",
+      "answer": "1998",
+      "options": ["1995", "1998", "2000", "1992"]
+    },
+    {
+      "questionText": "T.C. ilk Cumhurbaşkanı kimdir?",
+      "answer": "Mustafa Kemal Atatürk",
+      "options": ["İsmet İnönü", "Celal Bayar", "Mustafa Kemal Atatürk", "Turgut Özal"]
+    },
+    {
+      "questionText": "Kaç kıta vardır?",
+      "answer": "7",
+      "options": ["5", "6", "7", "8"]
+    },
+    {
+      "questionText": "Leonardo da Vinci hangi alanla tanınır?",
+      "answer": "Resim ve mühendislik",
+      "options": ["Tıp", "Spor", "Resim ve mühendislik", "Astronomi"]
+    },
+    {
+      "questionText": "En büyük memeli nedir?",
+      "answer": "Mavi balina",
+      "options": ["Fil", "Kutup ayısı", "Mavi balina", "Boz ayı"]
+    },
+    {
+      "questionText": "İlk Nobel Ödülü ne zaman verildi?",
+      "answer": "1901",
+      "options": ["1895", "1901", "1910", "1923"]
+    },
+    {
+      "questionText": "Bir düzine kaç tanedir?",
+      "answer": "12",
+      "options": ["10", "12", "14", "15"]
+    },
+    {
+      "questionText": "Türkiye’nin komşusu olmayan ülke hangisidir?",
+      "answer": "Pakistan",
+      "options": ["Gürcistan", "Irak", "Yunanistan", "Pakistan"]
+    },
+    {
+      "questionText": "Maddenin plazma hali nerede görülür?",
+      "answer": "Güneş",
+      "options": ["Deniz", "Hava", "Güneş", "Taşlar"]
+    },
+    {
+      "questionText": "İngilizce'de 'elma' ne demektir?",
+      "answer": "Apple",
+      "options": ["Pear", "Apple", "Orange", "Grape"]
+    },
+    {
+      "questionText": "Atomun merkezi ne olarak adlandırılır?",
+      "answer": "Çekirdek",
+      "options": ["Elektron", "Çekirdek", "Proton", "Nötron"]
+    }
+  ]
+}
