@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     #endregion
     
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Transform pathPoint;
     public const string TriggerTag = "Trigger";
     
     [Header("Ground Check")]
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag(TriggerTag))
         {
             FreezePlayer();
+            MovePointManager.Singleton.MovePoint(pathPoint);
             QuestionManager.Singleton.AskRandomQuestion();
         }
     }
