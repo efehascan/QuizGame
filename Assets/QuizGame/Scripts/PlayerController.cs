@@ -25,15 +25,25 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] Rigidbody2D rb;
     
-    private float moveHorizontal = 2f;
-    private float jumpPower = 2f;
-    private float jumpDuration = 0.5f;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] LayerMask groundLayer;
+    [SerializeField] float groundCheckRadius = 0.2f;
+    
+    private float moveHorizontal = 5f;
+    private float jumpPower = 5f;
     
     private bool canMove = true;
+    private bool isGrounded;
 
     private void Update()
     {
         Movement();
+        CheckGround();
+        
+        if(Input.GetKeyDown(KeyCode.Space) && canMove && isGrounded)
+            Jump();
+        
+        
     }
 
 
@@ -48,5 +58,15 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector2 move = new Vector2(horizontalInput * moveHorizontal, rb.velocity.y);
         rb.velocity = move;
+    }
+
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+    }
+
+    private void CheckGround()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 }

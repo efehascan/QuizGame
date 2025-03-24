@@ -30,7 +30,13 @@ public class UIManager : MonoBehaviour
     
     private Question currentQuestion;
 
-    // ReSharper disable Unity.PerformanceAnalysis
+    
+    /// <summary>
+    /// Verilen soruyu UI üzerinde görüntüler, soru metnini ve cevap seçeneklerini günceller.
+    /// Her butona ilgili cevap seçeneğini atar ve seçime göre cevap kontrolünü yapar.
+    /// Kullanılmayan butonları gizler.
+    /// </summary>
+    /// <param name="question">Gösterilecek soru nesnesi.</param>
     public void ShowQuestion(Question question)
     {
         currentQuestion = question;
@@ -58,6 +64,12 @@ public class UIManager : MonoBehaviour
         
     }
     
+    /// <summary>
+    /// Kullanıcının seçtiği cevabı doğru cevapla karşılaştırır.
+    /// Sonuca göre doğru veya yanlış cevap mesajını konsola yazdırır.
+    /// Ardından soru panelini kapatır.
+    /// </summary>
+    /// <param name="selected">Kullanıcının seçtiği cevap.</param>
     private void OnOptionSelected(string selected)
     {
         if (selected == currentQuestion.answer)

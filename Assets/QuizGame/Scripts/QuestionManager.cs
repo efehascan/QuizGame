@@ -36,6 +36,12 @@ public class QuestionManager : MonoBehaviour
         StartCoroutine(FetchQuestions());
     }
 
+
+    /// <summary>
+    /// API üzerinden JSON formatındaki soruları çeker ve oyun içi soru listesine yükler.
+    /// Başarıyla yüklenirse rastgele bir soruyu otomatik olarak ekrana getirir.
+    /// Hata oluşursa ilgili hata mesajını konsola yazdırır.
+    /// </summary>
     IEnumerator FetchQuestions()
     {
         UnityWebRequest wwwRequest = UnityWebRequest.Get(apiUrl);
@@ -69,6 +75,11 @@ public class QuestionManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Soru listesinden rastgele bir soru seçer, seçilen soruyu listeden kaldırır ve döndürür.
+    /// Eğer soru kalmadıysa null döner ve konsola uyarı mesajı yazdırır.
+    /// </summary>
+    /// <returns>Rastgele seçilen bir soru veya null.</returns>
     public Question GetRandomQuestion()
     {
         if (allQuestions.Count == 0)
@@ -84,6 +95,10 @@ public class QuestionManager : MonoBehaviour
         return question;
     }
     
+    /// <summary>
+    /// Rastgele bir soru seçer ve UIManager üzerinden kullanıcıya gösterir.
+    /// Eğer soru yoksa herhangi bir işlem gerçekleştirmez.
+    /// </summary>
     public void AskRandomQuestion()
     {
         var q = QuestionManager.Singleton.GetRandomQuestion();
