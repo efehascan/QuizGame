@@ -239,6 +239,51 @@
       "questionText": "Atomun merkezi ne olarak adlandırılır?",
       "answer": "Çekirdek",
       "options": ["Elektron", "Çekirdek", "Proton", "Nötron"]
+    },
+    {
+      "questionText": "Sinekli Bakkal romanının yazarı kimdir?",
+      "answer": "Halide Edib Adıvar",
+      "options": ["Reşat Nuri Güntekin", "Halide Edib Adıvar", "Yakup Kadri Karaosmanoğlu", "Ahmet Hamdi Tanpınar"]
+    },
+    {
+      "questionText": "Yazıyı icat eden ilk uygarlık hangisidir?",
+      "answer": "Sümerler",
+      "options": ["Hititler", "Asurlar", "Sümerler", "Elamlar"]
+    },
+    {
+      "questionText": "Tsunami felaketinde en fazla zarar gören Güney Asya ülkesi hangisidir?",
+      "answer": "Endonezya",
+      "options": ["Hindistan", "Sri Lanka", "Endonezya", "Bangladeş"]
+    },
+    {
+      "questionText": "Suyun üç hali nedir?",
+      "answer": "Katı, sıvı, gaz",
+      "options": ["Sıvı, buhar, yağmur", "Buhar, kar, sis", "Katı, sıvı, gaz", "Yağmur, dolu, sis"]
+    },
+    {
+      "questionText": "Bir haftada kaç saat vardır?",
+      "answer": "168",
+      "options": ["144", "150", "160", "168"]
+    },
+    {
+      "questionText": "Hangi gezegen halkalara sahiptir?",
+      "answer": "Satürn",
+      "options": ["Mars", "Jüpiter", "Satürn", "Venüs"]
+    },
+    {
+      "questionText": "Ay’ın dünyaya en yakın olduğu ana ne denir?",
+      "answer": "Perige",
+      "options": ["Apogee", "Perige", "Ekinoks", "Dolunay"]
+    },
+    {
+      "questionText": "Türkiye'nin en eski üniversitesi hangisidir?",
+      "answer": "İstanbul Üniversitesi",
+      "options": ["Ankara Üniversitesi", "Boğaziçi Üniversitesi", "İstanbul Üniversitesi", "Ege Üniversitesi"]
+    },
+    {
+      "questionText": "Türkiye'nin en büyük adası hangisidir?",
+      "answer": "Gökçeada",
+      "options": ["Bozcaada", "Gökçeada", "Marmara Adası", "Avşa Adası"]
     }
   ]
 }

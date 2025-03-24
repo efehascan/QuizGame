@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class QuestionManager : MonoBehaviour
@@ -24,8 +25,8 @@ public class QuestionManager : MonoBehaviour
 
     #endregion
     
-    private string apiUrl = "https://api.jsonbin.io/v3/b/67cf1c468561e97a50e979fb";
-    private string accessKey = "$2a$10$5LpMum5j/QxfPEM3E.VMAuVga8aUzP/sqsGEEHiMeHKTZbEezXfDO";
+    private string apiUrl = "https://api.jsonbin.io/v3/b/67e10cf68a456b79667b81b0";
+    private string accessKey = "$2a$10$MdpLLQ6zOmvkTiosYEK2y.pe3weEXrXaWd/u4w4D3JFX6iDyedeKO";
     private string json;
     
     private List<Question> allQuestions = new List<Question>();
@@ -34,6 +35,8 @@ public class QuestionManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(FetchQuestions());
+        
+
     }
 
 
@@ -55,7 +58,7 @@ public class QuestionManager : MonoBehaviour
             
             QuestionDataWrapper wrapper = JsonUtility.FromJson<QuestionDataWrapper>(json);
 
-            if (wrapper != null && wrapper.record != null)
+            if (wrapper != null && wrapper.record != null && wrapper.record.questions != null)
             {
                 allQuestions = new List<Question>(wrapper.record.questions);
                 Debug.Log("Soru sayısı: " + allQuestions.Count);
@@ -64,8 +67,10 @@ public class QuestionManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("JSON Dosyası yüklenmedi");
+                Debug.LogError("Soru listesi boş veya geçersiz. JSON formatını kontrol et!");
+                Debug.Log("Gelen JSON:\n" + json); // Ekstra debug satırı
             }
+
             
         }
         else
@@ -125,7 +130,7 @@ public class QuestionData
 [System.Serializable]
 public class Question
 {
-    public string question;
+    public string questionText;
     public string answer;
     public string[] options;
 }

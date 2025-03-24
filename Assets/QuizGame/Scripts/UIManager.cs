@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
         currentQuestion = question;
         
         questionPanel.SetActive(true);
-        questionText.text = question.question;
+        questionText.text = question.questionText;
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
