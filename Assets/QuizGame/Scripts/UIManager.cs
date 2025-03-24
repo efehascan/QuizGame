@@ -75,6 +75,7 @@ public class UIManager : MonoBehaviour
         if (selected == currentQuestion.answer)
         {
             Debug.Log("Doğru cevap verdin!");
+            PlayerController.Singleton.UnFreezePlayer();
         }
         else
         {

@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     
     
     [SerializeField] Rigidbody2D rb;
+    public const string TriggerTag = "Trigger";
     
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
@@ -35,6 +36,12 @@ public class PlayerController : MonoBehaviour
     private bool canMove = true;
     private bool isGrounded;
 
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     private void Update()
     {
         Movement();
@@ -42,14 +49,29 @@ public class PlayerController : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.Space) && canMove && isGrounded)
             Jump();
-        
-        
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag(TriggerTag))
+        {
+            FreezePlayer();
+            QuestionManager.Singleton.AskRandomQuestion();
+        }
+    }
+
+
+    public void UnFreezePlayer()
+    {
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
 
     private void FreezePlayer()
     {
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
 

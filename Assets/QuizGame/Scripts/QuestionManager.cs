@@ -63,7 +63,6 @@ public class QuestionManager : MonoBehaviour
                 allQuestions = new List<Question>(wrapper.record.questions);
                 Debug.Log("Soru sayısı: " + allQuestions.Count);
                 
-                AskRandomQuestion();
             }
             else
             {
