@@ -1416,6 +1416,8 @@ MonoBehaviour:
   pathDuration: 1
   targets:
   - {fileID: 1869691561}
+  deathTargets:
+  - {fileID: 1026943613}
   pathEase: 1
 --- !u!61 &369594679
 BoxCollider2D:
@@ -5428,6 +5430,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015585197}
   m_CullTransparentMesh: 1
+--- !u!1 &1026943612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026943613}
+  m_Layer: 0
+  m_Name: DeathPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1026943613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026943612}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2003169640}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027852511
 GameObject:
   m_ObjectHideFlags: 0
@@ -11150,7 +11183,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1869691561}
-  - component: {fileID: 1869691562}
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
@@ -11173,18 +11205,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2003169640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1869691562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869691560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15db9df838de27e4c8eef0ca2223e0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1874101046
 GameObject:
   m_ObjectHideFlags: 0
@@ -12402,6 +12422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2003169640}
+  - component: {fileID: 2003169641}
   m_Layer: 0
   m_Name: ---MovePoints---
   m_TagString: Untagged
@@ -12423,8 +12444,21 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1869691561}
+  - {fileID: 1026943613}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003169641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003169639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15db9df838de27e4c8eef0ca2223e0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2017769305
 GameObject:
   m_ObjectHideFlags: 0

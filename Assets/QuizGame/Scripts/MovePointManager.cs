@@ -21,6 +21,11 @@ public class MovePointManager : MonoBehaviour
 
     #endregion
 
+    
+    /// <summary>
+    /// Belirtilen hedef objeyi yatay eksende (X) 2.5 birim sağa taşır.
+    /// </summary>
+    /// <param name="targetTransform">Pozisyonu değiştirilecek obje.</param>
     public void MovePoint(Transform targetTransform)
     {
         Vector3 newPos = targetTransform.position + new Vector3(2.5f, 0f, 0f);

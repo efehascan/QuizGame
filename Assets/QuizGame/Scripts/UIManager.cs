@@ -81,6 +81,7 @@ public class UIManager : MonoBehaviour
         else
         {
             Debug.Log("Yanlış cevap!");
+            PlayerController.Singleton.DeathPath();
         }
 
         questionPanel.SetActive(false);
