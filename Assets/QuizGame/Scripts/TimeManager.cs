@@ -1,25 +1,53 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class TimeManager : MonoBehaviour
 {
-    float time = 30;
+    public static TimeManager Singleton { get; private set; }
 
-
-    private void Update()
+    private void Awake()
     {
-        Timer();
-        
+        if (Singleton != null && Singleton != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Singleton = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    private void Timer()
+    private Coroutine activeTimerCoroutine;
+
+    public void StartQuestionTimer()
     {
-        while (time >= 0)
+        if (activeTimerCoroutine != null)
+            StopCoroutine(activeTimerCoroutine);
+
+        activeTimerCoroutine = StartCoroutine(QuestionTimer());
+    }
+
+    private IEnumerator QuestionTimer()
+    {
+        float maxTime = 30f;
+        float startTime = Time.time;
+
+        while (Time.time - startTime < maxTime)
         {
-            time -= Time.deltaTime;
-            Debug.Log(time);
+            yield return null;
+        }
+
+        Debug.Log("Süre doldu, cevap verilmedi!");
+        ScoreManager.Singleton.HandleAnswer(false, maxTime + 1);
+        //UIManager.Singleton.ForceClosePanel();
+    }
+
+    public void StopTimerAndCheckAnswer(bool isCorrect)
+    {
+        if (activeTimerCoroutine != null)
+        {
+            StopCoroutine(activeTimerCoroutine);
         }
     }
 }
+            
