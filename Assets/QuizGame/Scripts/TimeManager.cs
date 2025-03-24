@@ -1,18 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    float time = 30;
+
+
+    private void Update()
     {
+        Timer();
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Timer()
     {
-        
+        while (time >= 0)
+        {
+            time -= Time.deltaTime;
+            Debug.Log(time);
+        }
     }
 }
