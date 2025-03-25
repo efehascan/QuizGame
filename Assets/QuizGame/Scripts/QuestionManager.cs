@@ -109,7 +109,6 @@ public class QuestionManager : MonoBehaviour
         if (q != null)
         {
             UIManager.Singleton.ShowQuestion(q);
-            TimeManager.Singleton.StartQuestionTimer();
 
         }
     }

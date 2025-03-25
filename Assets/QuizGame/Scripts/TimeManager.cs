@@ -1,8 +1,11 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using TMPro;
+using System;
 
 public class TimeManager : MonoBehaviour
 {
+    #region Singleton
     public static TimeManager Singleton { get; private set; }
 
     private void Awake()
@@ -16,38 +19,50 @@ public class TimeManager : MonoBehaviour
         Singleton = this;
         DontDestroyOnLoad(gameObject);
     }
+    #endregion
 
-    private Coroutine activeTimerCoroutine;
+    [SerializeField] private TextMeshProUGUI timeText;
 
-    public void StartQuestionTimer()
+    private float questionTime = 30f;
+    private Coroutine timerCoroutine;
+
+    public Action OnTimeUp;
+
+    /// <summary>
+    /// Sorunun süresini başlatır ve UI'ya saniye olarak yazar.
+    /// </summary>
+    public void StartTimer()
     {
-        if (activeTimerCoroutine != null)
-            StopCoroutine(activeTimerCoroutine);
+        if (timerCoroutine != null)
+            StopCoroutine(timerCoroutine);
 
-        activeTimerCoroutine = StartCoroutine(QuestionTimer());
+        timerCoroutine = StartCoroutine(Countdown());
     }
 
-    private IEnumerator QuestionTimer()
+    /// <summary>
+    /// Süreyi durdurur.
+    /// </summary>
+    public void StopTimer()
     {
-        float maxTime = 30f;
-        float startTime = Time.time;
-
-        while (Time.time - startTime < maxTime)
+        if (timerCoroutine != null)
         {
-            yield return null;
+            StopCoroutine(timerCoroutine);
+            timerCoroutine = null;
         }
-
-        Debug.Log("Süre doldu, cevap verilmedi!");
-        ScoreManager.Singleton.HandleAnswer(false, maxTime + 1);
-        //UIManager.Singleton.ForceClosePanel();
     }
 
-    public void StopTimerAndCheckAnswer(bool isCorrect)
+    private IEnumerator Countdown()
     {
-        if (activeTimerCoroutine != null)
+        float remainingTime = questionTime;
+
+        while (remainingTime > 0)
         {
-            StopCoroutine(activeTimerCoroutine);
+            timeText.text = Mathf.Ceil(remainingTime).ToString();
+            yield return new WaitForSeconds(1f);
+            remainingTime -= 1f;
         }
+
+        timeText.text = "0";
+        OnTimeUp?.Invoke(); // Süre bittiğinde event tetikle
     }
 }
-            

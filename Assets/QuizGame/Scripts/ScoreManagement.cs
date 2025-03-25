@@ -1,7 +1,9 @@
 using UnityEngine;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    #region Singleton
     public static ScoreManager Singleton { get; private set; }
 
     private void Awake()
@@ -11,54 +13,71 @@ public class ScoreManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Singleton = this;
         DontDestroyOnLoad(gameObject);
     }
+    #endregion
+
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     private int score = 0;
     private int comboCount = 0;
-    private bool isComboActive = false;
+    private int basePoint = 5;
+    private float fastAnswerThreshold = 3f; // 3 saniye içinde cevap
 
-    private const int baseScore = 5;
-    private const float fastAnswerThreshold = 3f;
+    private float lastAnswerTime;
 
-    public void HandleAnswer(bool isCorrect, float timeTaken)
+    /// <summary>
+    /// Oyun başladığında puan sıfırlanır.
+    /// </summary>
+    public void ResetScore()
     {
-        if (!isCorrect || timeTaken > 30f)
-        {
-            GameOver();
-            return;
-        }
+        score = 0;
+        comboCount = 0;
+        UpdateScoreText();
+    }
+
+    /// <summary>
+    /// Her doğru cevaptan sonra çağrılır. Cevap süresine göre puan hesaplanır.
+    /// </summary>
+    public void AddScore()
+    {
+        float timeTaken = Time.time - lastAnswerTime;
 
         if (timeTaken <= fastAnswerThreshold)
         {
             comboCount++;
-
-            if (comboCount >= 3)
-                isComboActive = true;
         }
         else
         {
-            comboCount = 0;
-            isComboActive = false;
+            comboCount = 0; // kombo bozuldu
         }
 
-        if (isComboActive)
+        int earned = basePoint;
+        if (comboCount >= 3)
         {
-            int comboBonus = (comboCount - 2) * baseScore;
-            score += baseScore + comboBonus;
-        }
-        else
-        {
-            score += baseScore;
+            earned += comboCount * basePoint - 10; // 4. soru 10, 5. soru 15...
         }
 
-        Debug.Log($"Skor: {score} | Kombo: {comboCount} | Süre: {timeTaken}");
+        score += earned;
+        UpdateScoreText();
+        lastAnswerTime = Time.time;
     }
 
-    private void GameOver()
+    /// <summary>
+    /// Yeni soruya geçerken çağırılır, sürenin başladığı zamanı kaydeder.
+    /// </summary>
+    public void MarkAnswerStart()
     {
-        Debug.Log("Oyun bitti!");
-        PlayerController.Singleton.DeathPath();
+        lastAnswerTime = Time.time;
+    }
+
+    private void UpdateScoreText()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Puan: " + score;
+        }
     }
 }

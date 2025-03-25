@@ -43,6 +43,10 @@ public class UIManager : MonoBehaviour
         
         questionPanel.SetActive(true);
         questionText.text = question.questionText;
+        
+        TimeManager.Singleton.StartTimer();
+        ScoreManager.Singleton.MarkAnswerStart();
+        
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
@@ -72,10 +76,13 @@ public class UIManager : MonoBehaviour
     /// <param name="selected">Kullanıcının seçtiği cevap.</param>
     private void OnOptionSelected(string selected)
     {
+        TimeManager.Singleton.StopTimer();
+        
         if (selected == currentQuestion.answer)
         {
             Debug.Log("Doğru cevap verdin!");
             PlayerController.Singleton.FollowPath();
+            ScoreManager.Singleton.AddScore();
             
         }
         else
