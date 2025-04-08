@@ -33,7 +33,7 @@ public class QuestionManager : MonoBehaviour
 
 
     private void Start()
-    {
+    {  
         StartCoroutine(FetchQuestions());
         
 
@@ -56,9 +56,9 @@ public class QuestionManager : MonoBehaviour
         {
             json = wwwRequest.downloadHandler.text;
             
-            QuestionDataWrapper wrapper = JsonUtility.FromJson<QuestionDataWrapper>(json);
+            var wrapper = JsonUtility.FromJson<QuestionDataWrapper>(json);
 
-            if (wrapper != null && wrapper.record != null && wrapper.record.questions != null)
+            if (wrapper is { record: { questions: not null } })
             {
                 allQuestions = new List<Question>(wrapper.record.questions);
                 Debug.Log("Soru sayısı: " + allQuestions.Count);
@@ -126,6 +126,7 @@ public class QuestionData
 {
     public Question[] questions;
 }
+
 
 [System.Serializable]
 public class Question
