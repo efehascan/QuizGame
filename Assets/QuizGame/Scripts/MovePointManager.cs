@@ -28,6 +28,7 @@ public class MovePointManager : MonoBehaviour
     /// <param name="targetTransform">Pozisyonu değiştirilecek obje.</param>
     public void MovePoint(Transform targetTransform)
     {
+        Debug.Log("Move Point");
         Vector3 newPos = targetTransform.position + new Vector3(2.5f, 0f, 0f);
         targetTransform.position = newPos;
     }
